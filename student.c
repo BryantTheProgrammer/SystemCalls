@@ -1,5 +1,5 @@
 /*
-professor.c starter code.
+student.c
 
 Bryant Hayden, Fall 2023
 
@@ -16,7 +16,6 @@ srand(time(NULL));
         //STDIN   0     usually the keyboard
         //STDOUT  1     usually the terminal where the program was run from
         //STDERR  2     usually the terminal where the program was run from
-   // while (1){
 
         //seed your random number generator
         //sleep for a random amount between 5 and 15 seconds to simulate studying
@@ -28,16 +27,19 @@ srand(time(NULL));
         int qNumber = rand()% 4 + 1;
         //write the random question number to standard output
         char mychars[2];
+
         sprintf(mychars, "%d", qNumber);
+
         fprintf(stderr, "student: asking question: %s\n", mychars);
         fflush(stderr);
+
         fprintf(stderr,"student: waiting for answer\n");
         fflush(stderr);
+
         write(1,mychars, 2);
-        //write(2, mychars, 1);
-       // write(2, "\n", 1);
+        
         //wait for a response from standard input
-        //write(1,mychars, 1);
+        
         
         char response[100];
         read(0, response, 99);
@@ -49,5 +51,4 @@ srand(time(NULL));
         memset(response, 0, 100);
         exit(1);
     }
-//}
 

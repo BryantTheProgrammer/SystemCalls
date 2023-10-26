@@ -27,7 +27,6 @@ int main(int argc, char **argv)
         pipe(pipe_fromparent);
 
         // fork to create a child process
-        //int pid = fork();
 
         // child portion
         // need two calls to dup2, two calls to close, and a call to execv
